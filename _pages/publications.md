@@ -15,7 +15,7 @@ nav_order: 3
 {% include smcc_style.liquid %}
 
 <style>
-  /* Title + subtitle on the left, the filter box on the right of the same header */
+  /* Title + subtitle on the left, the filter box on the right, level with the title */
   .post-header {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -28,7 +28,8 @@ nav_order: 3
   }
   .post-header #bibsearch {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1;
+    align-self: center;
     width: 16rem;
     max-width: 40vw;
     margin: 0;
