@@ -27,7 +27,7 @@
 | 사이트 제목, 기능 설정 | `_config.yml`                                             |
 
 - 사진 파일 이름은 `_`(밑줄)로 시작하면 안 됩니다. Jekyll이 빌드에서 제외합니다.
-- 대표 논문(Welcome, 교수님 페이지에 표시)은 BibTeX 항목에 `selected = {true}`를 넣습니다.
+- 교수님 페이지의 Selected Publications에 넣을 논문은 BibTeX 항목에 `selected = {true}`를 넣습니다.
 - 논문 표기: 공동 1저자는 성 뒤에 `†`, 교신저자는 `*` (예: `Sung*, B. J.`).
 
 ### 예시: 새 멤버 추가
@@ -51,12 +51,13 @@
 | 멤버 사진    | `assets/img/smcc/members/`   | `_data/members.yml`  |
 | 단체사진     | `assets/img/smcc/pictures/`  | `_pages/pictures.md` |
 | 연구 그림    | `assets/img/smcc/research/`  | `_pages/research.md` |
-| 첫 화면 사진 | `assets/img/smcc/campus.jpg` | `_pages/about.md`    |
+| 첫 화면 사진 | `assets/img/smcc/campus.png` | `_pages/about.md`    |
 
 공통 규칙:
 
 - 파일 이름은 영문 소문자, 숫자, `-`만 쓰는 것을 권장합니다 (예: `2027-spring-01.jpg`). `_`로 시작하면 사이트에 나오지 않습니다.
 - 휴대폰 원본 사진은 크기가 크므로 긴 변 1600px 정도로 줄여서 올립니다. 멤버 사진은 세로 사진(3:4)이 가장 잘 맞습니다.
+- 모서리를 둥글게 잘라 투명하게 만든 이미지는 쓰지 않습니다. 투명한 모서리에 흰 배경이 비쳐 보입니다. 모서리 둥글리기는 사이트가 자동으로 합니다.
 - 사진은 업로드할 때 위치정보(EXIF)를 지우는 것이 좋습니다. 줄이는 예시 (ImageMagick):
 
 ```bash
@@ -83,7 +84,7 @@ albums:
 
 ### 예시: 새 논문 추가
 
-`_bibliography/papers.bib` 맨 위(`---` 두 줄 아래)에 추가합니다. 같은 해 안에서는 파일에 적힌 순서대로 표시됩니다.
+`_bibliography/papers.bib` 맨 위(`---` 두 줄 아래)에 추가합니다. Publications 페이지에는 연도 구분 없이 파일에 적힌 순서 그대로 표시되므로, 항상 최신 논문이 위로 오게 적습니다. 출판 전 논문(`to be submitted`, `submitted`)은 맨 위에 모아 둡니다.
 
 ```bibtex
 @article{hong2027example,
@@ -102,30 +103,34 @@ albums:
 
 > 125\. “Paper Title”, **G. D. Hong**†, **C. S. Kim**†, Y. Lee, and **B. J. Sung\***, **_J. Chem. Phys._** 166, 123456 (2027)
 
-Publications 페이지는 이 파일에서 자동으로 만들어지고, 연도별로 묶여 표시됩니다.
+Publications 페이지는 이 파일에서 자동으로 만들어집니다. 오른쪽 위 검색창(Type to filter)으로 제목·저자를 검색할 수 있습니다.
 
-| 항목           | 설명                                                                                          |
-| -------------- | --------------------------------------------------------------------------------------------- |
-| `title`        | 논문 제목                                                                                     |
-| `author`       | `성, 이니셜` 형식, 저자 사이는 `and`. 공동 1저자는 성 뒤에 `†`, 교신저자는 `*`                |
-| `journal`      | 저널명                                                                                        |
-| `volume`       | 권                                                                                            |
-| `pages`        | 페이지 또는 논문 번호 (범위는 `2000--2008`처럼 하이픈 두 개)                                  |
-| `year`         | 연도 (이 값으로 연도별로 묶임)                                                                |
-| `bold_authors` | 굵게 표시할 연구실 멤버의 저자 순번 (1부터, 공백으로 구분). 교수님은 자동으로 강조되므로 제외 |
-| `smcc_no`      | 논문 번호 (현재 마지막 번호 + 1)                                                              |
-| `note`         | 출판 전 상태: `submitted`, `accepted`, `to be submitted` (기울임꼴로 표시)                    |
-| `selected`     | `{true}`이면 Welcome과 교수님 페이지의 대표 논문에 표시                                       |
-| `award`        | 표지 선정 등 특기 사항. 연도 뒤에 ` - 내용` 형식으로 표시                                     |
-| `doi`, `html`  | DOI 또는 논문 링크를 넣으면 끝에 `[DOI]`, `[Link]` 링크가 생김 (선택)                         |
+| 항목           | 설명                                                                                                                                                    |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`        | 논문 제목. 화학식의 아래/위 첨자는 `<sub>`, `<sup>`로 직접 표시 (예: `Li<sub>2</sub>S`, `Li<sup>+</sup>`)                                               |
+| `author`       | `성, 이니셜` 형식, 저자 사이는 `and`. 공동 1저자는 성 뒤에 `†`, 교신저자는 `*`                                                                          |
+| `journal`      | 저널명                                                                                                                                                  |
+| `volume`       | 권                                                                                                                                                      |
+| `pages`        | 페이지 또는 논문 번호 (범위는 `2000--2008`처럼 하이픈 두 개)                                                                                            |
+| `year`         | 연도                                                                                                                                                    |
+| `bold_authors` | 굵게 표시할 연구실 멤버의 저자 순번 (1부터, 공백으로 구분). 교수님은 자동으로 강조되므로 제외                                                           |
+| `smcc_no`      | 논문 번호 (현재 마지막 번호 + 1)                                                                                                                        |
+| `note`         | 출판 전 상태: `to be submitted`, `submitted`, `accepted` (기울임꼴로 표시). `submitted`가 들어간 논문 묶음과 그 아래 논문 사이에는 자동으로 간격이 생김 |
+| `selected`     | `{true}`이면 교수님 페이지의 Selected Publications에 표시                                                                                               |
+| `award`        | 표지 선정 등 특기 사항. 연도 뒤에 ` - 내용` 형식으로 표시                                                                                               |
+| `doi`, `html`  | DOI 또는 논문 링크를 넣으면 끝에 `[DOI]`, `[Link]` 링크가 생김 (선택)                                                                                   |
 
 - 첫 줄의 키(`hong2027example`)는 겹치지 않게 `첫저자성+연도+제목첫단어`로 만듭니다.
 - 출판 전 논문은 `journal`, `volume`, `pages` 없이 `note`만 적습니다. 게재되면 `note`를 지우고 저널 정보를 채웁니다.
-- 표시 형식은 `_layouts/bib.liquid`(구조)와 `_includes/smcc_style.liquid`(굵기·색)에서 바꿀 수 있습니다.
+- 화학식 첨자는 자동으로 바뀌지 않습니다. `B3LYP`, `C60`처럼 첨자가 아닌 경우와 구분할 수 없어서 필요한 곳에만 직접 표시합니다.
+- 표시 형식은 `_layouts/bib.liquid`(구조)와 `_includes/smcc_style.liquid`(굵기·색·줄 간격)에서 바꿀 수 있습니다. submitted 묶음 아래 간격과 검색창 위치는 `_pages/publications.md`의 `<style>`에 있습니다.
 
 ## 배포
 
-`main` 브랜치에 push하면 GitHub Actions(`.github/workflows/deploy.yml`)가 사이트를 빌드해 `gh-pages` 브랜치로 배포합니다. 몇 분 뒤 사이트에 반영됩니다.
+`main` 브랜치에 push하면 GitHub Actions(`.github/workflows/deploy.yml`)가 사이트를 빌드해 `gh-pages` 브랜치로 배포합니다. GitHub 웹에서 파일을 직접 고쳐 커밋해도 똑같이 배포되며, 2~3분 뒤 사이트에 반영됩니다 (안 보이면 Ctrl+Shift+R로 새로고침).
+
+- `README.md`만 바꾼 커밋은 배포를 실행하지 않습니다 (사이트 내용과 무관).
+- 변경 없이 다시 배포하려면 GitHub 저장소의 **Actions → Deploy site → Run workflow**를 누릅니다.
 
 ## 로컬에서 미리 보기
 
