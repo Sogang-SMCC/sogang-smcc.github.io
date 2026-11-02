@@ -14,6 +14,49 @@ nav_order: 3
 {% include bib_search.liquid %}
 {% include smcc_style.liquid %}
 
+<style>
+  /* Title + subtitle on the left, the filter box on the right of the same header */
+  .post-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 1.5rem;
+  }
+  .post-header .post-title,
+  .post-header .post-description {
+    grid-column: 1;
+  }
+  .post-header #bibsearch {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 16rem;
+    max-width: 40vw;
+    margin: 0;
+  }
+  @media (max-width: 576px) {
+    .post-header {
+      display: block;
+    }
+    .post-header #bibsearch {
+      width: 100%;
+      max-width: none;
+      margin-top: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  // Move the filter box from the page body into the header row
+  (function () {
+    var input = document.getElementById("bibsearch");
+    var header = document.querySelector(".post-header");
+    if (!input || !header) return;
+    var wrapper = input.parentElement;
+    header.appendChild(input);
+    if (wrapper && wrapper.tagName === "P" && !wrapper.textContent.trim()) wrapper.remove();
+  })();
+</script>
+
 <div class="publications">
 
 {% bibliography %}
