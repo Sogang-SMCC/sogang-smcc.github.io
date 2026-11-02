@@ -56,6 +56,16 @@ nav: false
     .prof-info > * + * {
       margin-top: 0.75rem;
     }
+    /* Mobile: photo and Name/Major centered; Education/Career stay left-aligned */
+    .prof-top {
+      align-items: center;
+    }
+    .prof-info {
+      align-self: stretch;
+    }
+    .prof-info > p:first-child {
+      text-align: center;
+    }
   }
   /* Contact follows right below; Awards, Research Interests, Selected Publications are separate blocks */
   article h4 {
