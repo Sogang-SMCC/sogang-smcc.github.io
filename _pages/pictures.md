@@ -2,7 +2,6 @@
 layout: page
 title: Pictures
 permalink: /pictures/
-description: Group Pictures
 nav: true
 nav_order: 4
 
