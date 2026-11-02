@@ -2,7 +2,6 @@
 layout: page
 title: Research
 permalink: /research/
-description: Molecular Simulations at multiscales
 nav: true
 nav_order: 2
 ---

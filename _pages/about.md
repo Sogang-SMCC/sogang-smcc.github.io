@@ -23,6 +23,7 @@ latest_posts:
     margin: 0 0 1.75rem;
   }
   .home-address {
+    text-align: right;
     font-size: 15px;
     line-height: 1.45;
   }
