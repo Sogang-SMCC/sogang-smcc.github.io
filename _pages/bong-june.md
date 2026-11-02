@@ -2,11 +2,14 @@
 layout: page
 title: 성봉준 (Bong June Sung)
 permalink: /members/bong-june/
-description: Professor, Department of Chemistry, Sogang University
 nav: false
 ---
 
 <style>
+  /* Hide the large page title/description header; title still names the browser tab */
+  .post-header {
+    display: none;
+  }
   /* Photo on the left, Name~Career on the right with top and bottom edges level, as on the old site */
   .prof-top {
     display: flex;
