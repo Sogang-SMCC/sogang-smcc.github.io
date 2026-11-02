@@ -30,7 +30,7 @@ nav: false
     justify-content: space-between;
     margin-left: 2rem;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.8;
   }
   .prof-info p,
   .prof-info ul {
