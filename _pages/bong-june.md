@@ -30,7 +30,7 @@ nav: false
     justify-content: space-between;
     margin-left: 2rem;
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
   .prof-info p,
   .prof-info ul {
@@ -63,6 +63,10 @@ nav: false
   }
   article h4.prof-block {
     margin-top: 4rem;
+  }
+  /* Keep the Contact list at its original spacing (overrides the 1.8 body rule in smcc_style) */
+  .post article > ul {
+    line-height: inherit;
   }
 </style>
 
