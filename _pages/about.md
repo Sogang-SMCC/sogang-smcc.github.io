@@ -16,6 +16,9 @@ latest_posts:
 {% include smcc_style.liquid %}
 
 <style>
+  .post-header .post-title {
+    text-align: center;
+  }
   .home-intro figure {
     margin: 0 0 1.75rem;
   }
