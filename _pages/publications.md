@@ -34,6 +34,10 @@ nav_order: 3
     max-width: 40vw;
     margin: 0;
   }
+  /* Gap between the submitted / to-be-submitted entries and the accepted / published ones */
+  .publications .bibliography > li:has(.smcc-unpublished) + li:not(:has(.smcc-unpublished)) {
+    margin-top: 2.5rem;
+  }
   @media (max-width: 576px) {
     .post-header {
       display: block;

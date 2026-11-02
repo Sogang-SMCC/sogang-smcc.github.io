@@ -7,7 +7,9 @@
   Styles live in _includes/smcc_style.liquid.
 {%- endcomment -%}
 {%- assign bold_idx = entry.bold_authors | split: ' ' -%}
-<div class="smcc-pub" id="{{ entry.key }}">
+{%- comment -%} "submitted" / "to be submitted" entries get a marker class so the page can space them apart {%- endcomment -%}
+{%- assign note_lc = entry.note | downcase -%}
+<div class="smcc-pub{% if note_lc contains 'submitted' %} smcc-unpublished{% endif %}" id="{{ entry.key }}">
   {%- if entry.smcc_no -%}
     <span class="smcc-no">{{ entry.smcc_no }}.</span>
   {% endif -%}
