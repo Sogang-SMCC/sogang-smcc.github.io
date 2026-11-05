@@ -131,6 +131,15 @@ Publications 페이지는 이 파일에서 자동으로 만들어집니다. 오�
 - `README.md`만 바꾼 커밋은 배포를 실행하지 않습니다 (사이트 내용과 무관).
 - 변경 없이 다시 배포하려면 GitHub 저장소의 **Actions → Deploy site → Run workflow**를 누릅니다.
 
+## 검색 노출 (Google Search Console)
+
+사이트는 연구실 Google 계정으로 [Google Search Console](https://search.google.com/search-console)에 `https://nanobiocom.sogang.ac.kr/` (URL 접두어)로 등록되어 있습니다.
+
+- 소유 확인은 `_config.yml`의 `google_site_verification` 값(HTML 태그 방식)으로 합니다. 이 값을 지우거나 `enable_google_verification`을 `false`로 바꾸면 확인이 풀립니다.
+- `sitemap.xml`은 배포할 때 `jekyll-sitemap` 플러그인이 자동으로 만들며, Search Console의 **Sitemaps**에 제출되어 있습니다. 페이지를 추가해도 따로 할 일은 없습니다.
+- 새 페이지를 빨리 검색에 띄우려면 Search Console 위쪽 검색창에 그 페이지 주소를 넣고 **색인 생성 요청**을 누릅니다.
+- 검색 결과에 쓰이는 사이트 설명·키워드는 `_config.yml`의 `description`, `keywords`입니다.
+
 ## 로컬에서 미리 보기
 
 Ruby 3.3 이상이 필요합니다.
