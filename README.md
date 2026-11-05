@@ -2,7 +2,7 @@
 
 서강대학교 화학과 연성 소재 전산화학 연구실 (성봉준 교수) 홈페이지 저장소입니다.
 
-- Site: https://sogang-smcc.github.io/
+- Site: https://nanobiocom.sogang.ac.kr/
 - Built with [Jekyll](https://jekyllrb.com/) and the [al-folio](https://github.com/alshedivat/al-folio) theme (MIT License)
 
 ## 연구실 소개
