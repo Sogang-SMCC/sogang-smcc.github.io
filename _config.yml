@@ -9,11 +9,11 @@ last_name: Chemistry Lab
 contact_note: >
   Ricci Science Hall 1217, 1215, Department of Chemistry, Sogang University, Seoul 04107, Korea
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Soft Matter Computational Chemistry Lab (Prof. Bong June Sung), Department of Chemistry, Sogang University. 서강대학교 화학과 연성 소재 전산화학 연구실.
+  Soft Matter Computational Chemistry Lab (Prof. Bong June Sung), Department of Chemistry, Sogang University. 서강대학교 화학과 연성 소재 전산화학 연구실 (성봉준 교수).
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: soft matter, computational chemistry, molecular simulation, Sogang University, 서강대학교, 연성 소재 전산화학 연구실 # add your own keywords or leave empty
+keywords: soft matter, computational chemistry, molecular simulation, Sogang University, 서강대학교, 연성 소재 전산화학 연구실, 성봉준, Bong June Sung # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🧪 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
