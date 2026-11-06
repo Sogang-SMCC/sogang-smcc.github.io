@@ -30,7 +30,7 @@ alumni:
       - { name: 권슬기, email: ksulgio7@sogang.ac.kr, photo: image_4.png, info: [Broad Institute of MIT and Harvard, Research Scientist] }
       - { name: 권태진, email: taejin1112@gmail.com, photo: shapeimage_15.png, info: [제주대학교, 화학코스메틱스학과, 교수] }
       - { name: 박정빈, email: jungbin919191@gmail.com, photo: parkchungbin.png, info: [국립순천대학교, 화학교육학과, 교수] }
-      - { name: 박형식 박사, email: hue0704@naver.com, photo: naouniosunaou.jpg, info: [삼성 디스플레이] }
+      - { name: 박형식, email: hue0704@naver.com, photo: naouniosunaou.jpg, info: [삼성 디스플레이] }
   - title: Master Graduates
     people:
       - { name: 정현태, email: junght@sogang.ac.kr, photo: shapeimage_6.png, info: [UW-Madison 박사, 한화토탈] }
