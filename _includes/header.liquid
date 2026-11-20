@@ -7,7 +7,7 @@
         .smcc-brand img { height: 60px; width: auto; display: block; }
         /* Wordmark slightly smaller than the symbol. Visible gap = 4px: symbol has 12px blank on its right (20% of 60px),
            wordmark has 9.7px blank on its left (18.6% of 52px); 12 + 9.7 - 17.7 = 4. */
-        .smcc-brand img.smcc-wordmark { height: 52px; margin-left: -17.7px; }
+        .smcc-brand img.smcc-wordmark { height: 52px; margin-left: -17.7px; position: relative; top: 3px; } /* top: nudged down a bit */
         /* Navbar is 69px on every page, home included (no logo there): 60px content + 4px + 4px padding + 1px border.
            body padding matches it so content isn't hidden under the fixed navbar (theme default is 57px). */
         #navbar { padding-top: 4px; padding-bottom: 4px; }
