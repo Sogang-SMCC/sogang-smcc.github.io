@@ -15,7 +15,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: soft matter, computational chemistry, molecular simulation, Sogang University, 서강대학교, 연성 소재 전산화학 연구실, 성봉준, Bong June Sung # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: smcc/favicon-light.png # SMCC symbol, 256px PNG cropped from logo/SMCC_gradient_symbol.png (PNG: the gradient SVG is too complex to rely on as a tab icon); _includes/header.liquid swaps it for favicon-dark.png when the site is in dark mode. was 🧪. Emoji (alternatively, provide image name in /assets/img/)
+icon: smcc/favicon-light.png # SMCC symbol, 256px PNG cropped from logo/SMCC_gradient_symbol.png (PNG: the gradient SVG is too complex to rely on as a tab icon); _includes/header.liquid swaps it for favicon-dark.png when the browser is in dark mode. was 🧪. Emoji (alternatively, provide image name in /assets/img/)
 apple_touch_icon: /assets/img/smcc/logo/SMCC_gradient_symbol.png # must be set explicitly when icon is in a subfolder (al_folio_core would otherwise look for /smcc/logo/...). Image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
 url: https://nanobiocom.sogang.ac.kr # the base hostname & protocol for your site

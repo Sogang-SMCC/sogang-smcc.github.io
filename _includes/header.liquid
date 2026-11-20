@@ -21,13 +21,14 @@
         html[data-theme='dark'] .smcc-brand .smcc-logo-dark { display: block; }
       </style>
       <script>
-        // Tab icon follows the site's light/dark toggle (al-folio sets <html data-theme="light|dark">), like the navbar logo.
+        // Tab icon follows the browser's light/dark mode (Chrome/OS appearance), not the site's toggle,
+        // so it always matches the color of the tab bar it sits on.
         (function () {
           var light = "{{ '/assets/img/smcc/favicon-light.png' | relative_url }}";
           var dark = "{{ '/assets/img/smcc/favicon-dark.png' | relative_url }}";
-          var root = document.documentElement;
+          var mq = window.matchMedia("(prefers-color-scheme: dark)");
           function update() {
-            var href = root.getAttribute("data-theme") === "dark" ? dark : light;
+            var href = mq.matches ? dark : light;
             document.querySelectorAll('link[rel~="icon"]').forEach(function (old) {
               if (old.getAttribute("href").split("?")[0] === href) return;
               // replace the element rather than editing href: some browsers only re-read a newly inserted icon link
@@ -37,7 +38,8 @@
             });
           }
           update();
-          new MutationObserver(update).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+          if (mq.addEventListener) mq.addEventListener("change", update);
+          else if (mq.addListener) mq.addListener(update); // older Safari
         })();
       </script>
       {% if page.permalink != '/' %}
