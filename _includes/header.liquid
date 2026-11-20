@@ -3,7 +3,9 @@
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
       <style>
-        .smcc-brand { padding: 0; display: flex; align-items: center; gap: 10px; }
+        .smcc-brand { padding: 0; display: flex; align-items: center; gap: 0; }
+        /* wordmark SVG has ~11px blank space on its left at 60px height; pull it in so the visible gap is ~8px */
+        .smcc-brand .smcc-wordmark { margin-left: -5px; }
         .smcc-brand img { height: 60px; width: auto; display: block; }
         /* Navbar is 69px on every page, home included (no logo there): 60px content + 4px + 4px padding + 1px border.
            body padding matches it so content isn't hidden under the fixed navbar (theme default is 57px). */
