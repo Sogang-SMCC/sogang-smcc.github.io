@@ -20,6 +20,26 @@
         html[data-theme='dark'] .smcc-brand .smcc-logo-light { display: none; }
         html[data-theme='dark'] .smcc-brand .smcc-logo-dark { display: block; }
       </style>
+      <script>
+        // Tab icon follows the site's light/dark toggle (al-folio sets <html data-theme="light|dark">), like the navbar logo.
+        (function () {
+          var light = "{{ '/assets/img/smcc/favicon-light.svg' | relative_url }}";
+          var dark = "{{ '/assets/img/smcc/favicon-dark.svg' | relative_url }}";
+          var root = document.documentElement;
+          function update() {
+            var href = root.getAttribute("data-theme") === "dark" ? dark : light;
+            document.querySelectorAll('link[rel~="icon"]').forEach(function (old) {
+              if (old.getAttribute("href").split("?")[0] === href) return;
+              // replace the element rather than editing href: some browsers only re-read a newly inserted icon link
+              var link = old.cloneNode();
+              link.setAttribute("href", href);
+              old.parentNode.replaceChild(link, old);
+            });
+          }
+          update();
+          new MutationObserver(update).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+        })();
+      </script>
       {% if page.permalink != '/' %}
         {% comment %}SMCC override: symbol + wordmark instead of the title text. In dark mode both switch to the white versions.{% endcomment %}
         <a class="navbar-brand smcc-brand" href="{{ site.baseurl }}/" aria-label="SMCC Lab home">
