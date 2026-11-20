@@ -23,8 +23,8 @@
       <script>
         // Tab icon follows the site's light/dark toggle (al-folio sets <html data-theme="light|dark">), like the navbar logo.
         (function () {
-          var light = "{{ '/assets/img/smcc/favicon-light.svg' | relative_url }}";
-          var dark = "{{ '/assets/img/smcc/favicon-dark.svg' | relative_url }}";
+          var light = "{{ '/assets/img/smcc/favicon-light.png' | relative_url }}";
+          var dark = "{{ '/assets/img/smcc/favicon-dark.png' | relative_url }}";
           var root = document.documentElement;
           function update() {
             var href = root.getAttribute("data-theme") === "dark" ? dark : light;
