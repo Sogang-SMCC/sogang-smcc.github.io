@@ -17,9 +17,10 @@
         html[data-theme='dark'] .smcc-brand .smcc-logo-dark { display: block; }
       </style>
       {% if page.permalink != '/' %}
-        {% comment %}SMCC override: symbol + wordmark instead of the title text. Wordmark switches navy -> white in dark mode; the gradient symbol reads on both.{% endcomment %}
+        {% comment %}SMCC override: symbol + wordmark instead of the title text. In dark mode both switch to the white versions.{% endcomment %}
         <a class="navbar-brand smcc-brand" href="{{ site.baseurl }}/" aria-label="SMCC Lab home">
-          <img class="smcc-symbol" src="{{ '/assets/img/smcc/logo/SMCC_gradient_symbol.svg' | relative_url }}" alt="">
+          <img class="smcc-symbol smcc-logo-light" src="{{ '/assets/img/smcc/logo/SMCC_gradient_symbol.svg' | relative_url }}" alt="">
+          <img class="smcc-symbol smcc-logo-dark" src="{{ '/assets/img/smcc/logo/SMCC_white_symbol.svg' | relative_url }}" alt="">
           <img class="smcc-wordmark smcc-logo-light" src="{{ '/assets/img/smcc/logo/SMCC_navy_wordmark.svg' | relative_url }}" alt="SMCC Lab">
           <img class="smcc-wordmark smcc-logo-dark" src="{{ '/assets/img/smcc/logo/SMCC_white_wordmark.svg' | relative_url }}" alt="SMCC Lab">
         </a>
