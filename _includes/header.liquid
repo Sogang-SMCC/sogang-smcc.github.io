@@ -10,7 +10,10 @@
         </a>
         <style>
           .smcc-brand { padding: 0; }
-          .smcc-brand img { height: 44px; width: auto; display: block; }
+          .smcc-brand img { height: 60px; width: auto; display: block; }
+          /* Taller logo -> taller navbar: trim navbar padding and push page content down to match (theme default is 57px). */
+          #navbar { padding-top: 4px; padding-bottom: 4px; }
+          body.fixed-top-nav { padding-top: 69px; }
           .smcc-brand .smcc-logo-dark { display: none; }
           html[data-theme='dark'] .smcc-brand .smcc-logo-light { display: none; }
           html[data-theme='dark'] .smcc-brand .smcc-logo-dark { display: block; }
