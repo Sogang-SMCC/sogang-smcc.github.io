@@ -11,7 +11,7 @@
              dots at 22.6px from symbol top; bar at 10.1px from wordmark top; wordmark centered at 6px -> top 6.5px,
              then raised 2px by eye on the live site -> 4.5px */
         .smcc-brand img.smcc-wordmark { height: 48px; margin-left: -13px; position: relative; top: 4.5px; }
-        /* Navbar is 69px on every page, home included (no logo there): 60px content + 4px + 4px padding + 1px border.
+        /* Navbar is 69px on every page: 60px content + 4px + 4px padding + 1px border.
            body padding matches it so content isn't hidden under the fixed navbar (theme default is 57px). */
         #navbar { padding-top: 4px; padding-bottom: 4px; }
         #navbar > .container { min-height: 60px; }
@@ -42,18 +42,13 @@
           else if (mq.addListener) mq.addListener(update); // older Safari
         })();
       </script>
-      {% if page.permalink != '/' %}
-        {% comment %}SMCC override: symbol + wordmark instead of the title text. In dark mode both switch to the white versions.{% endcomment %}
-        <a class="navbar-brand smcc-brand" href="{{ site.baseurl }}/" aria-label="SMCC Lab home">
-          <img class="smcc-symbol smcc-logo-light" src="{{ '/assets/img/smcc/logo/SMCC_gradient_symbol.svg' | relative_url }}" alt="">
-          <img class="smcc-symbol smcc-logo-dark" src="{{ '/assets/img/smcc/logo/SMCC_white_symbol.svg' | relative_url }}" alt="">
-          <img class="smcc-wordmark smcc-logo-light" src="{{ '/assets/img/smcc/logo/SMCC_navy_wordmark.svg' | relative_url }}" alt="SMCC Lab">
-          <img class="smcc-wordmark smcc-logo-dark" src="{{ '/assets/img/smcc/logo/SMCC_white_wordmark.svg' | relative_url }}" alt="SMCC Lab">
-        </a>
-      {% elsif site.enable_navbar_social %}
-        <!-- Social Icons -->
-        <div class="navbar-brand social">{% social_links %}</div>
-      {% endif %}
+      {% comment %}SMCC override: symbol + wordmark instead of the title text, on every page including the Welcome (home) page. In dark mode both switch to the white versions.{% endcomment %}
+      <a class="navbar-brand smcc-brand" href="{{ site.baseurl }}/" aria-label="SMCC Lab home">
+        <img class="smcc-symbol smcc-logo-light" src="{{ '/assets/img/smcc/logo/SMCC_gradient_symbol.svg' | relative_url }}" alt="">
+        <img class="smcc-symbol smcc-logo-dark" src="{{ '/assets/img/smcc/logo/SMCC_white_symbol.svg' | relative_url }}" alt="">
+        <img class="smcc-wordmark smcc-logo-light" src="{{ '/assets/img/smcc/logo/SMCC_navy_wordmark.svg' | relative_url }}" alt="SMCC Lab">
+        <img class="smcc-wordmark smcc-logo-dark" src="{{ '/assets/img/smcc/logo/SMCC_white_wordmark.svg' | relative_url }}" alt="SMCC Lab">
+      </a>
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed navbar-toggler-main"
